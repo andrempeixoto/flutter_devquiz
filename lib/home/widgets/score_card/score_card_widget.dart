@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 class ScoreCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.0),
       child: Container(
         height: 136,
         decoration: BoxDecoration(

@@ -9,7 +9,7 @@ class QuestionIndicatorWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

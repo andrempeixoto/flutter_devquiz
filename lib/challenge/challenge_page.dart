@@ -18,7 +18,7 @@ class _ChallengePageState extends State<ChallengePage> {
     );
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80),
+        preferredSize: Size.fromHeight(120),
         child: SafeArea(
           top: true,
           child: QuestionIndicatorWidget(),
@@ -26,7 +26,7 @@ class _ChallengePageState extends State<ChallengePage> {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.0),
-        child: QuizWidget(title: "Titulo Quiz Widget"),
+        child: QuizWidget(title: "O que o Flutter faz em sua totalidade?"),
       ),
     );
   }

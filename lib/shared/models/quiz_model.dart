@@ -12,8 +12,11 @@ class QuizModel {
   QuizModel({
     required this.title,
     required this.questions,
+<<<<<<< HEAD
     this.questionsAnswered = 0,
     required this.image,
     required this.level,
+=======
+>>>>>>> 2a63a7089f63e018aa379661eb981fceb410a4c3
   });
 }

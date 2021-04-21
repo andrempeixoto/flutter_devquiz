@@ -1,5 +1,6 @@
 import 'package:DevQuiz/home/widgets/appbar/app_bar_widget.dart';
 import 'package:DevQuiz/home/widgets/level_button/level_button_widget.dart';
+import 'package:DevQuiz/home/widgets/quiz_card/quiz_card_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,13 +15,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(height: 15),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
-            child: Container(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: 15),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 24.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -31,8 +33,23 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-          ),
-        ],
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+                childAspectRatio: 9 / 10,
+                physics: BouncingScrollPhysics(),
+                children: [
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

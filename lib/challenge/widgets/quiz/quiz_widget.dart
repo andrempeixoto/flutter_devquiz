@@ -22,8 +22,14 @@ class QuizWidget extends StatelessWidget {
           Expanded(
             child: ListView(
               children: [
-                AnswerWidget(title: "Kit de desenvolvimento de interface de usuário"),
-                AnswerWidget(title: "Possibilita a criação de aplicativos compilados nativamente"),
+                AnswerWidget(
+                    isSelected: true,
+                    isRight: true,
+                    title: "Kit de desenvolvimento de interface de usuário"),
+                AnswerWidget(
+                    isSelected: true,
+                    isRight: false,
+                    title: "Possibilita a criação de aplicativos compilados nativamente"),
                 AnswerWidget(title: "Kit de desenvolvimento de interface de usuário"),
                 AnswerWidget(title: "Possibilita a criação de aplicativos compilados nativamente"),
               ],

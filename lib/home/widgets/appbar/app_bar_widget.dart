@@ -29,12 +29,18 @@ class AppBarWidget extends PreferredSize {
                             TextSpan(text: user.name, style: AppTextStyles.titleBold),
                           ],
                         ),
+                        // style: TextStyle(shadows: [
+                        //   Shadow(color: Color(0xFF57B6E5), offset: Offset.zero, blurRadius: 2)
+                        // ]),
                       ),
                       Container(
                         height: 48,
                         width: 48,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(color: AppColors.purple, spreadRadius: 2, blurRadius: 2)
+                          ],
                           image: DecorationImage(
                             image: NetworkImage(user.photoUrl),
                           ),

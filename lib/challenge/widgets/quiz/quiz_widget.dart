@@ -11,31 +11,35 @@ class QuizWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Text(
-            title,
-            style: AppTextStyles.heading,
-          ),
-          SizedBox(height: 24),
-          Expanded(
-            child: ListView(
-              children: [
-                AnswerWidget(
-                    isSelected: true,
-                    isRight: true,
-                    title: "Kit de desenvolvimento de interface de usuário"),
-                AnswerWidget(
-                    isSelected: true,
-                    isRight: false,
-                    title: "Possibilita a criação de aplicativos compilados nativamente"),
-                AnswerWidget(title: "Kit de desenvolvimento de interface de usuário"),
-                AnswerWidget(title: "Possibilita a criação de aplicativos compilados nativamente"),
-              ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Container(
+        child: Column(
+          children: [
+            Text(
+              title,
+              style: AppTextStyles.heading,
             ),
-          ),
-        ],
+            SizedBox(height: 24),
+            Expanded(
+              child: ListView(
+                children: [
+                  AnswerWidget(
+                      isSelected: true,
+                      isRight: true,
+                      title: "Kit de desenvolvimento de interface de usuário"),
+                  AnswerWidget(
+                      isSelected: true,
+                      isRight: false,
+                      title: "Possibilita a criação de aplicativos compilados nativamente"),
+                  AnswerWidget(title: "Kit de desenvolvimento de interface de usuário"),
+                  AnswerWidget(
+                      title: "Possibilita a criação de aplicativos compilados nativamente"),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

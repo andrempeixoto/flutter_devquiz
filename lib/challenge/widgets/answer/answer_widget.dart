@@ -27,7 +27,7 @@ class AnswerWidget extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: isSelected ? _selectedCardColorRight : AppColors.border,
+          color: isSelected ? _selectedCardColorRight : AppColors.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: isSelected ? _selectedCardBorderRight : AppColors.border),
         ),

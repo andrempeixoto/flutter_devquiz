@@ -21,7 +21,9 @@ class ScoreCardWidget extends StatelessWidget {
             children: [
               Expanded(
                 flex: 1,
-                child: ChartWidget(),
+                child: ChartWidget(
+                  percent: .7,
+                ),
               ),
               Expanded(
                 flex: 2,

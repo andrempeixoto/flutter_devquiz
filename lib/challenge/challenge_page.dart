@@ -2,6 +2,7 @@ import 'package:DevQuiz/challenge/challenge_controller.dart';
 import 'package:DevQuiz/challenge/widgets/next_button/next_button_widget.dart';
 import 'package:DevQuiz/challenge/widgets/question_indicator/question_indicator_widget.dart';
 import 'package:DevQuiz/challenge/widgets/quiz/quiz_widget.dart';
+import 'package:DevQuiz/home/home_page.dart';
 import 'package:DevQuiz/shared/models/question_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -28,6 +29,21 @@ class _ChallengePageState extends State<ChallengePage> {
       controller.currentPage = pageController.page!.toInt() + 1;
     });
     super.initState();
+  }
+
+  nextPage() {
+    if (controller.currentPage < widget.questions.length) {
+      pageController.nextPage(
+        duration: Duration(milliseconds: 200),
+        curve: Curves.easeOut,
+      );
+    } else {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomePage(),
+          ));
+    }
   }
 
   @override
@@ -85,12 +101,17 @@ class _ChallengePageState extends State<ChallengePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               NextButtonWidget.white(
-                  label: "Pular",
+                label: "Pular",
+                onTap: nextPage,
+              ),
+              NextButtonWidget.darkGreen(
+                  label: "Confirmar",
                   onTap: () {
-                    pageController.nextPage(
-                        duration: Duration(milliseconds: 200), curve: Curves.easeOut);
+                    setState(() {});
+                    Future.delayed(Duration(seconds: 2), () {
+                      nextPage();
+                    });
                   }),
-              NextButtonWidget.darkGreen(label: "Confirmar", onTap: () {}),
             ],
           ),
         ),
